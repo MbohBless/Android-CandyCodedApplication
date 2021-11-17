@@ -1,5 +1,6 @@
 package com.pluralsight.candycoded;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.ContentValues;
 import android.content.Intent;
@@ -9,6 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -24,7 +26,7 @@ import com.loopj.android.http.TextHttpResponseHandler;
 import cz.msebera.android.httpclient.Header;
 
 
-public class MainActivity extends AppCompatActivity {
+  public class MainActivity extends AppCompatActivity {
   private Candy[] candies;
   private CandyDbHelper candyDbHelper = new CandyDbHelper(this);
 
@@ -96,4 +98,14 @@ public class MainActivity extends AppCompatActivity {
       db.insert(CandyContract.CandyEntry.TABLE_NAME, null, values);
     }
   }
-}
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+     if(item.getItemId() == R.id.info){
+       Intent intent = new Intent(this, InfoActivity.class);
+       startActivity(intent);
+       return true;
+     }
+          return super.onOptionsItemSelected(item);
+    }
+  }
