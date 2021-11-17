@@ -104,7 +104,6 @@ import cz.msebera.android.httpclient.Header;
      if(item.getItemId() == R.id.info){
        Intent intent = new Intent(this, InfoActivity.class);
        startActivity(intent);
-       return true;
      }
           return super.onOptionsItemSelected(item);
     }
