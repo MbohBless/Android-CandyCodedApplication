@@ -101,12 +101,9 @@ import cz.msebera.android.httpclient.Header;
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-    switch (item.getItemId()){
-      case R.id.info:{
         Intent intent = new Intent(this, InfoActivity.class);
         startActivity(intent);
-      }
-    }
+
           return super.onOptionsItemSelected(item);
     }
   }
